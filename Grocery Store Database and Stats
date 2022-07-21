@@ -1,0 +1,35 @@
+-- create a clothing store
+
+CREATE TABLE clothes (id INTEGER PRIMARY KEY, item_name TEXT, color TEXT, price INTEGER, brand TEXT);
+
+
+INSERT INTO clothes VALUES 
+(1, 'Pants', 'black', 30, 'Zara'),
+(2, 'Shirt', 'White', 20, 'Burberry'),
+(3, 'Top', 'Pink', 15, 'H&M'),
+(4, 'Trousers', 'Yellow', 49, 'Mango'),
+(5, 'Crop', 'Green', 5, 'Pantaloons'),
+(6, 'T-shirt', 'Blue', 34, 'Uniqlo'),
+(7, 'Dress', 'Red', 55, 'Madewell'),
+(8, 'Hoodie', 'Yellow', 37, 'GAP'),
+(9, 'Track', 'Grey', 25, 'Holiester'),
+(10, 'Jacket', 'Golden', 120, 'Gucci'),
+(11, 'Shorts', 'black', 90, 'Chanel'),
+(12, 'Sports T-shirt', 'White', 65, 'Adidas'),
+(13, 'Suite', 'Nevy Blue', 200, 'Louise Vuitton'),
+(14, 'Joggers', 'White', 39, 'Madewell'),
+(15, 'Jeans', 'Sky Blue', 50, 'Levis');
+
+--Display the database order by price
+SELECT * FROM clothes
+ORDER BY price;
+
+--What is the sum price total
+SELECT SUM(price) AS "Total Price" 
+FROM clothes;
+ 
+--Display the items which prices are 50$ or more, and order the list through price in descending order, and only display first 5 rows.
+SELECT item_name, price FROM clothes
+WHERE price >= 50
+ORDER BY price DESC
+LIMIT 5;
