@@ -1,4 +1,4 @@
--- create a clothing store
+#1. create a clothing store
 
 CREATE TABLE clothes (id INTEGER PRIMARY KEY, item_name TEXT, color TEXT, price INTEGER, brand TEXT);
 
@@ -20,15 +20,15 @@ INSERT INTO clothes VALUES
 (14, 'Joggers', 'White', 39, 'Madewell'),
 (15, 'Jeans', 'Sky Blue', 50, 'Levis');
 
---Display the database order by price
+#2. Display the database order by price
 SELECT * FROM clothes
 ORDER BY price;
 
---What is the sum price total
+#3. What is the sum price total
 SELECT SUM(price) AS "Total Price" 
 FROM clothes;
  
---Display the items which prices are 50$ or more, and order the list through price in descending order, and only display first 5 rows.
+#4. Display the items which prices are 50$ or more, and order the list through price in descending order, and only display first 5 rows.
 SELECT item_name, price FROM clothes
 WHERE price >= 50
 ORDER BY price DESC
